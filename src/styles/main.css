@@ -87,6 +87,10 @@ section.landing-section h2 {
     width: 25px;
     margin-right: 2em;
   }
+
+  .search-icon {
+    margin-right: 3%;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -343,8 +347,8 @@ footer a:hover {
 
 @media only screen and (max-width: 767px) {
   #twitter-nav{
-    margin-left: 1em;
-    margin-right: 1em;
+    /* margin-left: 1em;
+    margin-right: 1em; */
   }
 
   #docs #twitter-nav{

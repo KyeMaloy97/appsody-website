@@ -4,6 +4,7 @@ import Head from "./head"
 import Navbar from "./navbar"
 import Footer from "./footer"
 import MobileNav from "./mobileNav";
+import MobileSearchBar from "./mobileSearchBar";
 
 export default ({ children }) => (
     <React.Fragment>
@@ -11,6 +12,7 @@ export default ({ children }) => (
         <Navbar/>
         { children }
         <MobileNav />
+        {/* <MobileSearchBar /> */}
         <Footer/>
     </React.Fragment>
 )

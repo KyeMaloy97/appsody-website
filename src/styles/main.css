@@ -119,6 +119,14 @@ section.landing-section h2 {
   min-height: calc(100vh - 3.5em);
 }
 
+.glossary-card{
+  padding: 0.5em 1em 1em 1em;
+  margin: 0.7em;
+  width: 100%;
+  border-radius: 10px;
+  background: var(--light-grey);
+}
+
 .card {
   padding: 0.5em 1em 1em 1em;
   margin: 0.7em;
@@ -520,4 +528,34 @@ footer a:hover {
 
 .hide {
   display: none;
+}
+
+
+.glossary-card h5 {
+  margin-top: 0em;
+  margin-bottom: 1em;
+  padding: 0em;
+  text-align: left;
+  margin-left: 30px;
+  font-weight: bold !important;
+  font-size: 1.5rem;
+}
+
+.glossary-card p {
+  text-align: left;
+  margin-left: 30px;
+}
+
+.glossary-item {
+  min-height: 2em;
+  max-height: 2em;
+}
+
+.glossary-card:hover {
+  background-color: var(--colour-scheme-1);
+  color: white !important;
+}
+
+.glossary-active {
+  background-color: yellow;
 }

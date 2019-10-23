@@ -4,17 +4,14 @@ import GlossaryItem from "../components/glossaryItem";
 
 const GlossaryItemGrid = (props) => {
 
-    const tiles = props.headings.map(heading => {
+    const tiles = props.headings.map((heading, index) => {
         if (heading == null) return null;
-
-        return <GlossaryItem heading={heading} desc={props.desc}/>
-        
-        
+        return <GlossaryItem heading={heading} desc={props.desc[index]}/>
     });
 
     return (
-        <div className="container mx-0">
-            <div id="application-stacks" className="row mx-auto">
+        <div className="glossary-container">
+            <div className="row glossary-list">
                 {tiles}
             </div>
         </div>
@@ -27,7 +24,7 @@ export default () => (
         query {
             allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/content/docs/glossary/"}}) {
                 nodes {
-                    html
+                    htmlAst
                     headings {
                         value
                             }
@@ -36,14 +33,21 @@ export default () => (
             }
       `}
       render={data => {
+          
         let headings = [];
         let descriptions = [];
-        data.allMarkdownRemark.nodes[0].headings.forEach(node => {
-            headings = headings.concat(node.value);
-            console.log(data.allMarkdownRemark.nodes)
-        });
-        descriptions = descriptions.concat(data.allMarkdownRemark.nodes[0].html);
 
+        data.allMarkdownRemark.nodes[0].htmlAst.children.forEach(node => {
+            if (node.tagName === "h2" && node.type === "element") {
+            headings = headings.concat(node.children[1].value);
+            }
+        });
+
+        data.allMarkdownRemark.nodes[0].htmlAst.children.forEach(node => {
+            if (node.tagName === "p" && node.type === "element") {
+                descriptions = descriptions.concat(node.children[0].value);
+            }
+        });
         return <GlossaryItemGrid headings={headings} desc={descriptions}/>
       }}
     />

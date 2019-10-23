@@ -32,3 +32,5 @@
       path: /docs/stacks/build-and-test
 - title: FAQ
   path: /docs/faq
+- title: Glossary
+  path: docs/glossary

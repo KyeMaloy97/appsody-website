@@ -523,32 +523,64 @@ footer a:hover {
 }
 
 
+
+
+/* Glossary Page Styling */
+
+
+
+
+
+
+.glossary-container {
+  display: flex;
+  margin: 0 15px
+  /* align-items: center;
+  align-content: center; */
+}
+
+.jumpbar {
+  text-align: center;
+  position: fixed;
+  transform: translateY(25%);
+  float: right;
+}
+
+.jumpbar div h3 {
+  font-size: 1.2em;
+  margin: 3px;
+}
+
 .glossary-card {
-  padding: 0.5em 1em 1em 1em;
-  margin: 0.7em;
+  padding: 1em 1em 1em 0;
+  margin: 1.0em 0.7em 1.0em 0;
   width: 100%;
-  border-radius: 20px;
+  border-radius: 25px;
   background: var(--light-grey);
+  min-height: 120px;
 }
 
 .glossary-card h5 {
   margin-top: 0em;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   padding: 0em;
   text-align: left;
   margin-left: 30px;
   font-weight: bold !important;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .glossary-card p {
   text-align: left;
   margin-left: 30px;
+  line-height: 26px;
+
 }
 
 .glossary-item {
   min-height: 2em;
   max-height: 2em;
+
 }
 
 .glossary-card:hover {
@@ -558,4 +590,31 @@ footer a:hover {
 
 .glossary-active {
   background-color: yellow;
+}
+
+.glossary-list {
+  padding-left: 1rem;
+}
+
+.glossary-header {
+  padding-left: 1rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .glossary-card {
+    width: 100%;
+    margin: 0.5em 1em;
+  }
+
+  .glossary-header {
+    padding: 0 15px;
+  }
+
+  .jumpbar {
+    display: none;
+  }
+
+  .glossary-list{
+    padding-left: 0;
+  }
 }

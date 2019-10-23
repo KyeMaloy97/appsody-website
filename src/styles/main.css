@@ -119,14 +119,6 @@ section.landing-section h2 {
   min-height: calc(100vh - 3.5em);
 }
 
-.glossary-card{
-  padding: 0.5em 1em 1em 1em;
-  margin: 0.7em;
-  width: 100%;
-  border-radius: 10px;
-  background: var(--light-grey);
-}
-
 .card {
   padding: 0.5em 1em 1em 1em;
   margin: 0.7em;
@@ -530,6 +522,14 @@ footer a:hover {
   display: none;
 }
 
+
+.glossary-card {
+  padding: 0.5em 1em 1em 1em;
+  margin: 0.7em;
+  width: 100%;
+  border-radius: 20px;
+  background: var(--light-grey);
+}
 
 .glossary-card h5 {
   margin-top: 0em;

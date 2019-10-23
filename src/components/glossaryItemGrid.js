@@ -4,20 +4,12 @@ import GlossaryItem from "../components/glossaryItem";
 
 const GlossaryItemGrid = (props) => {
 
-    const defaultRepo = "/incubator."
-    const tiles = props.stacks.map(stack => {
-        if (stack == null) return null;
+    const tiles = props.headings.map(heading => {
+        if (heading == null) return null;
 
-        const templateURL = stack.templates[0].url;
-        const repo = templateURL.split("/").reverse()[0].split(".")[0];
-        const githubURL = `https://github.com/appsody/stacks/tree/master/${repo}/${stack.id}`;
-
-        if (!stack.templates[0].url.includes(defaultRepo)) {
-            return <GlossaryItem id={stack.id} heading={stack.name} desc={"Some information on what the glossary item description might look like."} cmd={"appsody init " + repo+"/"+stack.id} github={githubURL}/>
-        }
-        else {
-            return <GlossaryItem id={stack.id} heading={stack.name} desc={"Some information on what the glossary item description might look like."} cmd={"appsody init " + stack.id} github={githubURL}/>
-        }
+        return <GlossaryItem heading={heading} desc={props.desc}/>
+        
+        
     });
 
     return (
@@ -33,27 +25,26 @@ export default () => (
     <StaticQuery
       query={graphql`
         query {
-            allIndexesYaml {
+            allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/content/docs/glossary/"}}) {
                 nodes {
-                    stacks {
-                        id
-                        name
-                        description
-                        templates {
-                            url
+                    html
+                    headings {
+                        value
+                            }
                         }
-                    }
                 }
             }
-        }
       `}
       render={data => {
-        let stacks = [];
-        data.allIndexesYaml.nodes.forEach(node => {
-            stacks = stacks.concat(node.stacks);
+        let headings = [];
+        let descriptions = [];
+        data.allMarkdownRemark.nodes[0].headings.forEach(node => {
+            headings = headings.concat(node.value);
+            console.log(data.allMarkdownRemark.nodes)
         });
+        descriptions = descriptions.concat(data.allMarkdownRemark.nodes[0].html);
 
-        return <GlossaryItemGrid stacks={stacks}/>
+        return <GlossaryItemGrid headings={headings} desc={descriptions}/>
       }}
     />
   )

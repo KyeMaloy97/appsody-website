@@ -9,6 +9,7 @@ class GlossaryItem extends React.Component {
 
     handleClick(e) {
         e.preventDefault();
+        console.log("Clicked me");
         this.setState(state => ({
       isToggleOn: !state.isToggleOn
     }));
@@ -17,17 +18,17 @@ class GlossaryItem extends React.Component {
     render() {
         if(this.state.isToggleOn) {
         return (
-        <div className="tile glossary-card text-center">
-          <h5 className="heading-glossary">{this.props.heading}</h5>
-          <p>{this.props.desc}</p>
-        </div>
+          <div className="tile glossary-card text-center">
+            <h5 className="heading-glossary">{this.props.heading}</h5>
+            <p>{this.props.desc}</p>
+          </div>
       );
         } else {
         return (
-        <div className="tile glossary-card text-center glossary-active">
-          <h5 className="heading-glossary">{this.props.heading}</h5>
-          <p>{this.props.desc}</p>
-        </div>
+          <div className="tile glossary-card text-center glossary-active">
+            <h5 className="heading-glossary">{this.props.heading}</h5>
+            <p>{this.props.desc}</p>
+          </div>
       );
         }
     }

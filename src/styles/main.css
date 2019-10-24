@@ -534,9 +534,10 @@ footer a:hover {
 
 .glossary-container {
   display: flex;
-  margin: 0 15px
+  margin: 0 15px;
   /* align-items: center;
   align-content: center; */
+  margin-bottom: 30px;
 }
 
 .jumpbar {
@@ -554,10 +555,11 @@ footer a:hover {
 .glossary-card {
   padding: 1em 1em 1em 0;
   margin: 1.0em 0.7em 1.0em 0;
-  width: 100%;
-  border-radius: 25px;
+  width: 80%;
+  border-radius: 15px;
   background: var(--light-grey);
   min-height: 120px;
+  border: 2px solid var(--dark-grey);
 }
 
 .glossary-card h5 {
@@ -586,6 +588,8 @@ footer a:hover {
 .glossary-card:hover {
   background-color: var(--colour-scheme-1);
   color: white !important;
+  border: 2px solid var(--colour-scheme-1);
+
 }
 
 .glossary-active {
@@ -616,5 +620,13 @@ footer a:hover {
 
   .glossary-list{
     padding-left: 0;
+  }
+}
+
+/* Added new breakpoint as the width looked stupidly wide on large screens/mpnitors*/
+
+@media only screen and (min-width: 1400px) {
+  .glossary-card {
+    width: 65%;
   }
 }

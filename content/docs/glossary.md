@@ -4,63 +4,38 @@ title: Glossary
 
 # A
 
-## Application Modernization 
-Application Modernization is an approach to refactoring legacy applications into cloud-native microservices and re-platforming traditional apps onto container platforms.
-
 ## Appsody
-Appsody provides pre-configured application stacks, which use the well-known Dockerfile syntax to specify which language runtimes, frameworks, libraries, and tools are included. Project templates build upon these stacks, providing developers with a templatized application to bring into their IDE of choice and begin development.
+Helps you develop containerized applications for the cloud. (Source: website overview)
 
 ## Appsody CLI
-The Appsody CLI is powerful and intuitive, allowing developers to discover the available collections and bring them into their local development environment. From here, they can build, run, test, and deploy applications locally.
+Allows you to connect to an Appsody hub, pull down a stack, and create, build, test and deploy your application. (Source: website first page). The Appsody CLI is powerful and intuitive, allowing developers to discover the available stacks and bring them into their local development environment. From here, they can build, run, test, and deploy applications locally. The Docker container that's built for an application can then be integrated with Tekton pipelines and deployed to Kubernetes cloud environments. (Source: Overview Appsody site) 
+Allows developers to discover Appsody stacks and create applications based on these stacks within their local development environment. From here, they can build, run, test, and deploy applications locally. When the application is ready for deployment into production, the Docker container that is built for an application can then be integrated with Tekton pipelines and deployed to Kubernetes cloud environments. (my rewording of above)
 
+## Appsody Stack
+Appsody stacks are pre-configured language runtimes, frameworks, and additional libraries and tools to simplify application development. Stacks are an easy way to manage consistency and adopt best practices across many applications. [They can be customised by individual developers, or development teams, to suit their needs]. Stacks include a base container image (see dockerfile-stack) and [project templates]() that act as a starting point for your application development. (Source: website)
+
+## Project Templates
+These typically provide a 'Hello World' starting point for application development. As with other components within an Appsody stack, they are customisable by developers and can be shared across teams.
+
+## Dockerfile and Dockerfile-stack
+Dockerfile-stack is a Dockerfile that builds the base container image of a stack and specifies its behavior during development. åDockerfile combines your application and the stack to build a production image, ready for deployment. 
+<!-- 
 ## Appsody Hub
-(see Kabanero Collection Hub)
 
-## Appsody Stacks
-These are configurable technology stacks built with popular runtimes and frameworks, such as Java with Eclipse MicroProfile and Node.js with Express. These stacks provide the foundation for building applications that can be deployed and managed effectively in Kubernetes. They are a piece of the overall definition of a Kabanero collection, they are focused on the creation of containers that will be deployed into a server by Kabanero.
-# C
+## Appsody Operator
 
-## CodeWind
-Eclipse Codewind is an open source project that makes it easier for developers to create cloud-native applications within their favorite IDE. Currently, Codewind supports Visual Studio Code, Eclipse IDE and Eclipse Che.
+## Controller
 
-## Kabanero
-Kabanero is an open source project focused on bringing together foundational open source technologies into a modern microservices-based framework.
+## Stable / Incubator / Experimental
 
-## Kabanero Foundation 
-The Kabanero Foundation Instance is a deployment of a Kabanero collection in a specific Kubernetes cluster. The Kabanero operator is leveraged to install and operate the various curated infrastructure and artifacts as defined by the Kabanero collection.
+## Index -->
 
-## Kabanero Enterprise Edition
-Kabanero Enterprise comprises of all open-source Kabanero tools as well as few additional tools for enterprise. It is built from the Kabanero.io open source project. It provides a well-defined set of tools, processes and resources for the enterprise developer, operator and architect to collaborate. As part of Cloud Pak for Applications, Kabanero Enterprise has support available from IBM.
+## Cloud Functions
+Provide a 'Functions-as-a-Service' programming model. You can think of it as similar to AWS lambda, however - the key difference is that lambdas are their own 'thing', they have their own SDK and are very proprietary tech. With our implementation developers can use the APIs they are already using in traditional apps, so there is less of a learning curve/jar in the experience. For Java, you can write JAX-RS functions, in Node.js you write to 'Connect' which is what Express (web framework) uses. So developers are already familar with writing the function handler - only now that's all they need to write.
 
-## Kabanero Operator
-Similar to Kubernetes Operator. An Operator is a method of packaging, deploying and managing a Kubernetes application. See Kabanero Foundation for more.
+## Cloud Native
+Includes a pre-configured web framework, such as Express or Liberty, and provides a number of endpoints which help with cloud deployments, such as health (liveness/readiness) and montoring/metrics (/metrics).  
+Cloud Native - as a term - we describe as applications which leverage the services provided by a cloud platform. So if your cloud (i.e. IBM Cloud) uses prometheus monitoring, your apps should integrate with that. Given nearly all clouds are aligning around Kubernetes - this is the base point. Health Checks are how Kubernetes knows whether your app can have work routed towards it, or if it needs restarting.
 
-## Kabanero Collections
-Collections are pre-configured with popular open-source technologies to enable rapid development and deployment of quality microservice-based applications. Collections provide best-of-breed runtimes, tools and build pipelines. They include everything you need to create an app or microservice and deploy as a container image, with enterprise-grade deployment & integrated continuous delivery pipelines. The choice of technology and pipelines are customizable to meet enterprise and platform needs. A Kabanero collection includes the following: 1) Appsody Stack and operator 2) The pipelines used in conjunction with the Appsody stack. 3) Dashboards. A Kabanero Collection is created by an application architect, as a logical set of software components for developing and deploying applications. A collection is realized as components (such as tools and container images) used at coding time by application developers, and components forming a deployment pipeline that can extract, build, and deploy the resulting application image to a running Kubernetes cluster.
-Active collection - a collection that has been activated and is available for development and deployment
-Master collection - collections that are curated in Github <sjk> I hate this name -- since *master* has special connotation with github.   btw, we changed this name in the CLI to "curated collection"</sjk>
-New collection - new is a status assigned to deactivated collections; they remain in master (note: there was discussion to change the term for this status)  <sjk>we changed this to "Inactive"</sjk>
-
-## Kabanero Collection Hub
-he Kabanero Collection Hub is the central point of control for the solution architect to define Appsody Stacks, pipeline definitions, event handlers, and all aspects of building, deploying and managing applications in Kabanero.
-
-## Kabanero Instance
-A particular instance of Kabanero running on OpenShift or OKD. And instances is associated with a team of developers that are using it to develop and deploy applications.  An instance is associated with Kabanero Collection Hub. There can be many instances inside a single cluster,  and physically they are represented by a set of Openshift projects (namespaces) and Kubernetes resources.
-
-## Knative
-Knative is an open-source project that allows developers to run applications in a serverless mode on top of kubernetes.
-
-## Openshift Project (Namespace)
-A grouping of Kubernetes resources that are secured together.  Resources such as containers, pods.  Only those Openshift users that have been granted access to a project may have operate on the resources inside it.
-
-## Tekton
-Tekton is a powerful yet flexible Kubernetes-native open-source framework for creating continuous integration and delivery (CI/CD) systems. It lets you build, test, and deploy across multiple cloud providers or on-premises systems by abstracting away the underlying implementation details.
-
-## Tekton Pipeline
-The Tekton Pipelines project provides k8s-style resources for declaring CI/CD-style pipelines, using the Tekton service for processing pipeline steps.
-
-## Template
-A set of predefined code that is used to create artifacts inside a Kabanero project when Appsody Init is called for a particular Kabanero Collection.
-
-## Transformation Advisor
-Transformation Advisor is a developer tool that helps customers to quickly evaluate on-premise Java EE apps for deployment readiness to the cloud.
+## Cloud Packaged
+Allows you to take an application, wrapper it in a best-practice Dockerfile and it is ready to deploy to cloud. This is basically a black box.

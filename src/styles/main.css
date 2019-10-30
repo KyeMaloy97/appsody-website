@@ -31,8 +31,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #main-nav {
-  background-color: var(--white);
-  box-shadow: 0 -6px 29px var(--darker-grey);
+  /* background-color: var(--white); */
+  box-shadow: 0 -6px 29px var(--dark-grey);
+  backdrop-filter: saturate(160%) blur(50px);
+  background-color: rgba(255,255,255,0.7);
 }
 
 .btn-primary {
@@ -155,7 +157,7 @@ section.landing-section h2 {
   margin: 0.7em;
   width: 14em;
   height: 14em;
-  box-shadow: 1px 4px 15px rgba(0, 0, 0, .35);
+  box-shadow: 1px 4px 15px var(--dark-grey);
 }
 
 .card.flip {
@@ -250,6 +252,11 @@ section.landing-section h2 {
 
 #error404 {
   margin: 3em;
+}
+
+.form-control {
+  backdrop-filter: saturate(180%) blur(40px);
+  background-color: rgba(255,255,255,0.85);
 }
 
 #docs {
@@ -544,6 +551,7 @@ footer a:hover {
   z-index: 1;
   max-width: 13.1em;
   max-height: 60vh;
+  
 }
 
 .dropdown-content a {

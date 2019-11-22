@@ -288,10 +288,18 @@ footer {
   right: 0;
   bottom: 0;
   left: 0em;
-  background-color: var(--colour-scheme-1);
-  box-shadow: 0 6px 29px var(--darker-grey);
-  padding: 1em;
+  border-top: 5px solid var(--colour-scheme-1);
+  background-color: white;
+  box-shadow: 0 4px 18px var(--dark-grey);
   text-align: center;
+  z-index: 999999;
+  height: 8em;
+}
+
+
+.footer-image {
+  display: block;
+  float: left;
 }
 
 @media only screen and (max-width: 767px) {
@@ -307,15 +315,15 @@ footer {
 }
 
 footer ul {
-  margin: 0;
+  margin: auto;
   padding: 0;
   list-style-type: none;
+  line-height: 8em;
 }
 
 footer li {
   display: inline-block;
   padding: 0 1em;
-  border-right: 1px solid var(--white);
 }
 
 footer li:last-child {
@@ -323,11 +331,11 @@ footer li:last-child {
 }
 
 footer a {
-  color: white;
+  color: black;
 }
 
 footer a:hover {
-  color: white;
+  color: black;
 }
 
 #appsody-hello {

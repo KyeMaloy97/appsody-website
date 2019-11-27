@@ -26,10 +26,14 @@
       path: /docs/stacks/create
     - title: Modifying Stacks
       path: /docs/stacks/modify
-    - title: Stack Variables
+    - title: Packaging Stacks
+      path: /docs/stacks/package
+    - title: Testing Stacks
+      path: /docs/stacks/test
+    - title: Publishing Stacks
+      path: /docs/stacks/publish
+    - title: Environment Variables
       path: /docs/stacks/environment-variables
-    - title: Building and Testing
-      path: /docs/stacks/build-and-test
 - title: FAQ
   path: /docs/faq
 - title: Glossary

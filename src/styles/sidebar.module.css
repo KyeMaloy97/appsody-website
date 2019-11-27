@@ -1,0 +1,47 @@
+.sidebar {
+    width: 20em;
+    margin-top: -1.5rem;
+    padding-left: 5em;
+    background-color: white;
+    height: Calc(100vh);
+    box-shadow: 2px 0px 12px rgba(187, 65, 124, 0.12);
+    padding: 2rem 0;
+    box-sizing: border-box;
+    position: fixed;
+    overflow-y: scroll;
+    z-index: 1000;
+    transition: 0.5s;
+}
+
+.sidebar-link {
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .sidebar {
+        width: 85%;
+        padding-top: -1.5rem;
+        position: fixed;
+        overflow-y: auto;
+        z-index: 1000;
+        height: calc(100vh);
+        margin-left: -85vw;
+    }
+
+    .docs-section {
+        font-size: 1em;
+    }
+
+    .sidebar-link {
+        font-size: 2em !important;
+    }
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+  }
+  

@@ -34,6 +34,14 @@
       path: /docs/stacks/publish
     - title: Environment Variables
       path: /docs/stacks/environment-variables
+- title: Contributing
+  items:
+    - title: Contributing Guidelines
+      path: /docs/CONTRIBUTING
+    - title: Development
+      path: /docs/DEVELOPMENT
+    - title: Code of Conduct
+      path: /docs/CODE_OF_CONDUCT
 - title: FAQ
   path: /docs/faq
 - title: Glossary

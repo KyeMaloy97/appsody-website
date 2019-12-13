@@ -21,8 +21,8 @@ const IndexPage = () => (
     <section className="landing-section">
       <div className="row w-100 mx-auto">
         <div className="col">
-          <img className="w-75 my-4 full-logo-homepage white-appsody-full" src={ appsodyFullLogoWhite } alt="Appsody Logo"></img>
-          <img className="w-75 my-4 full-logo-homepage black-appsody-full" src={ appsodyFullLogo } alt="Appsody Logo"></img>
+          <img className="w-75 my-4 full-logo-homepage-white white-appsody-full" src={ appsodyFullLogoWhite } alt="Appsody Logo"></img>
+          <img className="w-75 my-4 full-logo-homepage-black black-appsody-full" src={ appsodyFullLogo } alt="Appsody Logo"></img>
           <p className="lead">
             Compose a cloud native masterpiece.
           </p>
@@ -100,7 +100,7 @@ function switchDownloaded() {
   document.getElementById('downloads-button').style.cssText = 'background: #BB417C; color: white'
   document.getElementById('downloads-button').className = 'btn btn-primary stepper-left'
 
-  document.getElementById('recently-button').style.cssText = 'background: white; color: black'
+  document.getElementById('recently-button').style.cssText = 'background: clear; color: black @media (prefers-color-scheme: dark) { color: white; }  '
   document.getElementById('recently-button').className = 'btn btn-clear stepper-right'
 
 
@@ -112,7 +112,7 @@ function switchRecent() {
   document.getElementById('top-downloads').style.cssText = 'display: none';
   document.getElementById('recently-updated').style.cssText = 'display: block';
 
-  document.getElementById('downloads-button').style.cssText = 'background: white; color: black'
+  document.getElementById('downloads-button').style.cssText = 'background: clear; color: black @media (prefers-color-scheme: dark) { color: white; }'
   document.getElementById('downloads-button').className = 'btn btn-clear stepper-left'
 
   document.getElementById('recently-button').style.cssText = 'background: #BB417C; color: white'

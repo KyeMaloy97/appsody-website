@@ -226,7 +226,7 @@ section.landing-section h3 {
     line-height: 1.7rem;
   }
 
-  .full-logo-homepage {
+  .full-logo-homepage-black {
     margin: auto;
     display: block;
     width: 90% !important;
@@ -911,6 +911,10 @@ blockquote p {
     box-shadow: 1px 4px 15px rgba(10, 10, 10, .55);
   }
 
+  .updated-date {
+    color: rgba(255,255,255,0.6);
+  }
+
   .flip a.btn {
     color: black;
   }
@@ -926,6 +930,19 @@ blockquote p {
 
   .white-appsody-full {
     display: block;
+  }
+
+  @media only screen and (max-width: 767px) {
+    
+  .full-logo-homepage-white {
+    margin: auto;
+    display: block;
+    width: 90% !important;
+  }
+  }
+
+  .hero-description {
+    color: white;
   }
 
   .btn-primary {

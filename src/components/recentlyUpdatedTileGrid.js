@@ -9,7 +9,7 @@ class RecentlyUpdatedTileGrid extends Component {
     componentDidMount() {
         this.setState({ isLoading: true });
 
-        fetch(`https://cors-anywhere.herokuapp.com/https://hub.docker.com/v2/repositories/appsody/?page=1&page_size=100`)
+        fetch(`https://hub.docker.com/v2/repositories/appsody/?page=1&page_size=100`)
             .then(response => response.json())
             .then(data => this.setState({ pulls: data.results, isLoading: false }))
             .then(() => {

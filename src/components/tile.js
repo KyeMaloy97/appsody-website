@@ -49,7 +49,7 @@ class Tile extends React.Component {
         <div className="tile card text-center">
           
           <h5 className="heading-tile">{this.props.heading}</h5>
-          { this.props.deprecated && <img title={this.props.deprecated} onClick={() => this.showDeprecationMessageMobile(this.props.deprecated)} role="button" className="deprecated-icon" src={require("../images/deprecation_warning.svg") } width="30px"/>}
+          { this.props.deprecated && <img title={this.props.deprecated} alt="deprecated-icon" onClick={() => this.showDeprecationMessageMobile(this.props.deprecated)} className="deprecated-icon" src={require("../images/deprecation_warning.svg") } width="30px"/>}
 
           <p>{this.desc}</p>
 
@@ -60,7 +60,7 @@ class Tile extends React.Component {
     } else {
        return (
           <div id={this.props.id} className="tile card flip">
-            <i onClick={this.handleClick} className="fas fa-arrow-left" title="flip card"></i>
+            <i role="button" onClick={this.handleClick} className="fas fa-arrow-left" title="flip card"></i>
             <h5 id="tile-heading" className="heading-tile">{this.props.heading}</h5>
   
             <div id="command-input">
